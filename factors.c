@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 // Function to factorize a number into two smaller numbers
-void factorize(int n) {
-    for (int i = 2; i <= n / 2; i++) {
+void factorize(long long n) {
+    for (long long i = 2; i <= n / 2; i++) {
         if (n % i == 0) {
-            printf("%d=%d*%d\n", n, i, n / i);
+            printf("%lld=%lld*%lld\n", n, n / i, i);
             return; // Stop after the first factorization
         }
     }
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 
     char line[256];
     while (fgets(line, sizeof(line), file) != NULL) {
-        int n = atoi(line);
+        long long n = atoll(line);
         if (n > 1) {
             factorize(n);
         }
